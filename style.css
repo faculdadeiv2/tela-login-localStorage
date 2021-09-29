@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    font-size: 62.5%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*, button, input {
+    font-family: 'Poppins', sans-serif;
+}
+
+label, input, button {
+    font-size: 1.8rem;
+}
+
+main {
+    height: 90vh;
+    display: flex;
+}
+
+#container {
+    background-color: #fff;
+    width: 60vw;
+    margin: auto;
+}
+
+#container h2 {
+    font-size: 2.4rem;
+}
+
+#container {
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3.2rem;
+    box-shadow: 1px 1px 2px 1px #333;
+    border-radius: .2rem;
+}
+
+form {
+    width: 100%;
+}
+
+form #inputs,
+#buttons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+form #inputs input,
+#buttons button {
+    width: 100%;
+    padding: 4px;
+}
+
+#buttons button {
+    border: 0;
+    cursor: pointer;
+    border-radius: .2rem;
+}
+
+#buttons button:hover {
+    box-shadow: 1px 1px 4px 1px #333;
+}
+
+#buttons button:first-child {
+    background-color: #614ea7;
+    color: #fff;
+}
+
+#buttons button:last-child {
+    margin-top: .8rem;
+    background-color: #5e52ff;
+    color: #fff;
+}
+
+#alerta {
+    width: max-content;
+    padding: .4rem;
+    border-radius: .2rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: none;
+}
+
+#alerta p {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+@media (max-width: 800px) {
+    #container {
+        width: 80vw;
+        padding: 1.6rem;
+    }   
+}
+
+@media (max-width: 500px) {
+    #container h2 {
+        font-size: 1.8rem;
+    }   
+}
