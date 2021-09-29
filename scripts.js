@@ -77,14 +77,17 @@ function validaECadastra(campos, funcao) {
     };
 };
 
-botaoLogin.addEventListener('click', function () {
-    const campos = {
-        email: email.value,
-        senha: senha.value
+function cadastro(campos) {
+    if (!verificaExistente(campos)) {
+        cadastros.push(campos);
+        localStorage.setItem('cadastros', JSON.stringify(cadastros));
+        mensagem('Usuário cadastrado com sucesso!', 'sucesso');
+    } else {
+        mensagem('Esse usuário já existe!', 'erro');
     };
 
-    validaECadastra(campos, login);
-});
+    limpaCampos();
+};
 
 function login(campos) {
     if (verificaExistente(campos)) {
@@ -100,6 +103,15 @@ function login(campos) {
     limpaCampos();
 };
 
+botaoLogin.addEventListener('click', function () {
+    const campos = {
+        email: email.value,
+        senha: senha.value
+    };
+
+    validaECadastra(campos, login);
+});
+
 botaoCadastro.addEventListener('click', function () {
     const campos = {
         email: email.value,
@@ -108,15 +120,3 @@ botaoCadastro.addEventListener('click', function () {
 
     validaECadastra(campos, cadastro);
 });
-
-function cadastro(campos) {
-    if (!verificaExistente(campos)) {
-        cadastros.push(campos);
-        localStorage.setItem('cadastros', JSON.stringify(cadastros));
-        mensagem('Usuário cadastrado com sucesso!', 'sucesso');
-    } else {
-        mensagem('Esse usuário já existe!', 'erro');
-    };
-
-    limpaCampos();
-};
